@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+  
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+            
+     
+            
+        - id: DEPT-SERVICE
+          uri: lb://DEPT-SERVICE
+          predicates:
+            - Path=/dept/**
+            
+     
+
+
+
+            
+            
+
